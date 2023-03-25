@@ -54,7 +54,7 @@ namespace Ex3
         }
         private void send()
         {
-            Server.Connect(IPAddress.Any, 9000);
+            Server.Connect(ep);
             string wc = txt_send.Text;
             byte[] ds = Encoding.UTF8.GetBytes(wc);
             Server.BeginSend(ds, ds.Length, new AsyncCallback(sendata), null);
